@@ -6,11 +6,11 @@
 /*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 14:59:51 by vtestut           #+#    #+#             */
-/*   Updated: 2023/03/09 04:19:47 by vtestut          ###   ########.fr       */
+/*   Updated: 2023/03/17 14:33:43 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/so_long.h"
+#include "../includes/so_long.h"
 
 bool	ft_check_map_2(char *full, int read_return, t_vars *vars)
 {
@@ -45,7 +45,7 @@ bool	ft_check_map_3(char *full, t_vars *vars)
 	vars->map_vars.cloned_map = ft_split(full, '\n');
 	free(full);
 	if (vars->map_vars.map == NULL || vars->map_vars.cloned_map == NULL)
-		return (ft_error("ft_split fucked up"), false);
+		return (ft_error("ft_split failed"), false);
 	if (!(ft_is_rectangle(vars)))
 		return (false);
 	return (true);
@@ -112,7 +112,7 @@ bool	ft_check_content(t_vars *vars)
 		j = 0;
 		while (vars->map_vars.map[i][j] != '\0')
 		{
-			if (ft_strchr("CPME01", vars->map_vars.map[i][j]) == NULL)
+			if (ft_strchr("CPE01", vars->map_vars.map[i][j]) == NULL)
 			{
 				ft_error("Unvalide char in map file");
 				ft_quit(vars);

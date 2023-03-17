@@ -6,23 +6,20 @@
 /*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 17:00:41 by vtestut           #+#    #+#             */
-/*   Updated: 2023/03/09 02:59:57 by vtestut          ###   ########.fr       */
+/*   Updated: 2023/03/17 14:33:26 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/so_long.h"
+#include "../includes/so_long.h"
 
 void	ft_destroy_image(t_vars *vars)
 {
-	mlx_destroy_image(vars->mlx, vars->hero1);
-	mlx_destroy_image(vars->mlx, vars->hero2);
+	mlx_destroy_image(vars->mlx, vars->hero);
 	mlx_destroy_image(vars->mlx, vars->wall);
 	mlx_destroy_image(vars->mlx, vars->floor);
 	mlx_destroy_image(vars->mlx, vars->coffee);
 	mlx_destroy_image(vars->mlx, vars->exit);
 	mlx_destroy_image(vars->mlx, vars->exit2);
-	mlx_destroy_image(vars->mlx, vars->bug_v.bug1);
-	mlx_destroy_image(vars->mlx, vars->bug_v.bug2);
 }
 
 int	ft_close_and_free(t_vars *vars)
@@ -30,7 +27,7 @@ int	ft_close_and_free(t_vars *vars)
 	int	i;
 
 	i = 0;
-	if (vars->map_vars.map != NULL)
+	if ((vars->map_vars.map != NULL) && vars->hero)
 	{
 		while (vars->map_vars.map[i] != NULL)
 		{

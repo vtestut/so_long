@@ -49,15 +49,19 @@ HEADER			+= minilibx-linux/mlx_int.h
 
 CC				= clang
 CFLAGS			+= -Wall
-
-ifeq ($(everything),true)
-	CFLAGS		+= -Weverything
-else
-	CFLAGS		+= -Werror
-endif
-
 CFLAGS			+= -Wextra
-CFLAGS			+= -fPIE
+CFLAGS			+= -Werror
+
+#ifeq ($(everything),true)
+#	CFLAGS		+= -Weverything
+
+#else
+#	CFLAGS		+= -Werror
+
+#endif
+
+#CFLAGS			+= -Wextra
+#CFLAGS			+= -fPIE
 
 
 ###########################################################
@@ -66,6 +70,7 @@ CFLAGS			+= -fPIE
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(OBJS)
+	$(MAKE) -sC ./minilibx-linux
 	$(CC) $(CFLAGS) $(OBJS) -o $@ -L ./minilibx-linux -lmlx -lXext -lX11 $(INCLUDES) -L $(LIBFT_PATH) -lft
 
 $(LIBFT):
@@ -84,21 +89,24 @@ fclean: clean
 	$(MAKE) -sC $(LIBFT_PATH) fclean
 
 re: fclean
-	$(MAKE)
+	$(MAKE)\
+
+#make (minilin install ????)
 
 del: fclean
 	rm a.out
 
 bonus: fclean 
 	$(MAKE) -sC $(PATH_BONUS)
-#	mv bonus/so_long_bonus ./
 
 .PHONY: all clean fclean re del test full_test
 
-# CIBLE > DEPENDANCES > REGLES
+###########################################################
+#### HELP
 
-# variables spéciales :
-
+#		CIBLE > DEPENDANCES > REGLES
+# 		variables spéciales :
+#
 # $+ idem que $^ mais avec les doublons
 # $| idem que $^ mais avec les doublons et triés
 # $% nom de la cible d'une règle de substitution

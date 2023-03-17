@@ -11,7 +11,7 @@ PATH_SRCS 		+= srcs/
 ###########################################################
 #### SOURCES
 
-SRCS			+= so_long.c
+SRCS			+= so_long_bonus.c
 SRCS			+= parsing.c
 SRCS			+= parsing_utils.c
 SRCS			+= parsing_utils_2.c
@@ -20,7 +20,7 @@ SRCS 			+= print_map.c
 SRCS			+= moves.c
 SRCS			+= moves_bonus.c
 SRCS			+= monster_bonus.c
-SRCS			+= monster_utils.c
+SRCS			+= monster_bonus_utils.c
 SRCS			+= shut_down.c
 
 vpath %.c $(PATH_SRCS)
@@ -41,7 +41,7 @@ LIBFT 			= $(LIBFT_PATH)/libft.a
 #### INCLUDES
 
 INCLUDES 		= -I./includes -I./minilibx-linux -I./$(LIBFT_PATH)/includes
-HEADER			= includes/so_long.h
+HEADER			= includes/so_long_bonus.h
 HEADER			+= minilibx-linux/mlx.h
 HEADER			+= minilibx-linux/mlx_int.h
 
@@ -50,25 +50,28 @@ HEADER			+= minilibx-linux/mlx_int.h
 
 CC				= clang
 CFLAGS			+= -Wall
-
-ifeq ($(everything),true)
-	CFLAGS		+= -Weverything
-else
-	CFLAGS		+= -Werror
-endif
-
 CFLAGS			+= -Wextra
-CFLAGS			+= -fPIE
-CFLAGS			+= -g
+CFLAGS			+= -Werror
+
+#ifeq ($(everything),true)
+#	CFLAGS		+= -Weverything
+#else
+#	CFLAGS		+= -Werror
+#endif
+
+#CFLAGS			+= -Wextra
+#CFLAGS			+= -fPIE
+#CFLAGS			+= -g
 
 
 ###########################################################
 #### RULES
 
-all : $(NAME)
+all : bonus
 
-$(NAME): $(LIBFT) $(OBJS)
-	$(CC) $(CFLAGS) $(OBJS) -o $@ -L ./minilibx-linux -lmlx -lXext -lX11 $(INCLUDES) -L $(LIBFT_PATH) -lft
+bonus: $(LIBFT) $(OBJS)
+	$(MAKE) -sC ./minilibx-linux
+	$(CC) $(CFLAGS) $(OBJS) -o so_long_bonus -L ./minilibx-linux -lmlx -lXext -lX11 $(INCLUDES) -L $(LIBFT_PATH) -lft
 
 $(LIBFT):
 	$(MAKE) -sC $(LIBFT_PATH)
@@ -82,7 +85,7 @@ clean:
 	$(MAKE) -sC $(LIBFT_PATH) clean
 
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) so_long_bonus
 	$(MAKE) -sC $(LIBFT_PATH) fclean
 
 re: fclean
@@ -92,7 +95,7 @@ del: fclean
 	rm a.out
 
 #test: 
-#	@ $(CC) -o tests/a.out tests/main.c $(NAME) && bash tests/runtests.sh
+#	@ $(CC) -o tests/a.out tests/main.c bonus && bash tests/runtests.sh
 
 #full_test: fclean all test
 
@@ -104,7 +107,7 @@ del: fclean
 
 .PHONY: all clean fclean re del test full_test
 
-#.SILENT: all $(NAME) $(LIBFT) $(OBJS) clean fclean re del test full_test norm
+#.SILENT: all bonus $(LIBFT) $(OBJS) clean fclean re del test full_test norm
 
 
 

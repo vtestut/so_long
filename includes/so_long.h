@@ -6,7 +6,7 @@
 /*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 13:12:47 by vtestut           #+#    #+#             */
-/*   Updated: 2023/03/16 16:54:48 by vtestut          ###   ########.fr       */
+/*   Updated: 2023/03/17 12:56:16 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,10 @@ typedef struct s_vars {
 }				t_vars;
 
 /*******************	SO_LONG.C		**************************************/
-void	ft_set_sprites(t_vars *vars);
-void	ft_init_vars(t_vars *vars);
 int		main(int ac, char **av);
+void	ft_init_vars(t_vars *vars);
+void	ft_set_sprites(t_vars *vars);
+void	ft_xpm_protection(t_vars *vars);
 
 /*******************	PARSING.C		**************************************/
 bool	ft_check_param(int ac, char **av, t_vars *vars);

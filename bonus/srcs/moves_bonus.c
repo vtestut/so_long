@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   moves_utils.c                                      :+:      :+:    :+:   */
+/*   moves_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 23:10:11 by vtestut           #+#    #+#             */
-/*   Updated: 2023/03/16 16:06:46 by vtestut          ###   ########.fr       */
+/*   Updated: 2023/03/17 14:54:07 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/so_long.h"
+#include "../includes/so_long_bonus.h"
 
 int	ft_idle(t_vars *vars, int x, int y)
 {
@@ -38,7 +38,7 @@ void	ft_move_up_aux(t_vars *vars, int x, int y)
 {
 	if (vars->map_vars.map[y - 1][x] == 'M')
 	{
-		ft_printf("\nYOU DIED !\n\n");
+		ft_printf("\nYou lose !\n\n");
 		ft_close_and_free(vars);
 	}
 	vars->map_vars.map[y - 1][x] = 'P';
@@ -53,7 +53,7 @@ void	ft_move_down_aux(t_vars *vars, int x, int y)
 {
 	if (vars->map_vars.map[y + 1][x] == 'M')
 	{
-		ft_printf("\nYOU DIED !\n\n");
+		ft_printf("\nYou lose !\n\n");
 		ft_close_and_free(vars);
 	}
 	vars->map_vars.map[y + 1][x] = 'P';
@@ -68,7 +68,7 @@ void	ft_move_left_aux(t_vars *vars, int x, int y)
 {
 	if (vars->map_vars.map[y][x - 1] == 'M')
 	{
-		ft_printf("\nYOU DIED !\n\n");
+		ft_printf("\nYou lose !\n\n");
 		ft_close_and_free(vars);
 	}
 	vars->map_vars.map[y][x - 1] = 'P';
@@ -83,7 +83,7 @@ void	ft_move_right_aux(t_vars *vars, int x, int y)
 {
 	if (vars->map_vars.map[y][x + 1] == 'M')
 	{
-		ft_printf("\nYOU DIED !\n\n");
+		ft_printf("\nYou lose !\n\n");
 		ft_close_and_free(vars);
 	}
 	vars->map_vars.map[y][x + 1] = 'P';

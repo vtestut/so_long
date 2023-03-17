@@ -6,11 +6,11 @@
 /*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 18:56:49 by vtestut           #+#    #+#             */
-/*   Updated: 2023/03/16 16:45:25 by vtestut          ###   ########.fr       */
+/*   Updated: 2023/03/17 14:33:32 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/so_long.h"
+#include "../includes/so_long.h"
 
 void	ft_display_game(t_vars *vars)
 {

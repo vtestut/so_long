@@ -6,11 +6,11 @@
 /*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 16:32:57 by vtestut           #+#    #+#             */
-/*   Updated: 2023/03/16 16:54:54 by vtestut          ###   ########.fr       */
+/*   Updated: 2023/03/17 14:33:47 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/so_long.h"
+#include "../includes/so_long.h"
 
 void	ft_check_content_2(t_vars *vars)
 {

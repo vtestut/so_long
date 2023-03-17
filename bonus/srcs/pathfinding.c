@@ -6,11 +6,11 @@
 /*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 05:29:53 by vtestut           #+#    #+#             */
-/*   Updated: 2023/03/16 16:36:30 by vtestut          ###   ########.fr       */
+/*   Updated: 2023/03/17 14:38:43 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/so_long.h"
+#include "../includes/so_long_bonus.h"
 
 bool	ft_pathfinding(t_vars *vars)
 {

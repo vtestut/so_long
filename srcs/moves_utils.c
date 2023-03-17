@@ -6,11 +6,11 @@
 /*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/21 23:10:11 by vtestut           #+#    #+#             */
-/*   Updated: 2023/03/08 17:42:02 by vtestut          ###   ########.fr       */
+/*   Updated: 2023/03/17 14:33:54 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/so_long.h"
+#include "../includes/so_long.h"
 
 void	ft_move_up_aux(t_vars *vars, int x, int y)
 {

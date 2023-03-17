@@ -6,11 +6,11 @@
 /*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 14:38:44 by vtestut           #+#    #+#             */
-/*   Updated: 2023/03/16 17:00:47 by vtestut          ###   ########.fr       */
+/*   Updated: 2023/03/17 14:33:51 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/so_long.h"
+#include "../includes/so_long.h"
 
 int	ft_hook_events(int keycode, t_vars *vars)
 {
@@ -24,6 +24,7 @@ int	ft_hook_events(int keycode, t_vars *vars)
 		ft_move_left(vars);
 	else if ((keycode == D_KEY || keycode == RIGHT))
 		ft_move_right(vars);
+	ft_display_content(vars);
 	return (0);
 }
 
@@ -45,8 +46,8 @@ void	ft_move_up(t_vars *vars)
 			vars->map_vars.map[y][x] = '0';
 			vars->moves++;
 			ft_put_sprite(vars, vars->floor, y, x);
-			ft_put_sprite(vars, vars->hero1, y - 1, x);
-			ft_printf("You won ! total moves : %d.\n", vars->moves);
+			ft_put_sprite(vars, vars->hero, y - 1, x);
+			ft_printf("\nYou won ! total moves : %d.\n", vars->moves);
 			ft_close_and_free(vars);
 		}
 	}
@@ -70,8 +71,8 @@ void	ft_move_down(t_vars *vars)
 			vars->map_vars.map[y][x] = '0';
 			vars->moves++;
 			ft_put_sprite(vars, vars->floor, y, x);
-			ft_put_sprite(vars, vars->hero1, y + 1, x);
-			ft_printf("You won ! total moves : %d.\n", vars->moves);
+			ft_put_sprite(vars, vars->hero, y + 1, x);
+			ft_printf("\nYou won ! total moves : %d.\n", vars->moves);
 			ft_close_and_free(vars);
 		}
 	}
@@ -95,8 +96,8 @@ void	ft_move_left(t_vars *vars)
 			vars->map_vars.map[y][x] = '0';
 			vars->moves++;
 			ft_put_sprite(vars, vars->floor, y, x);
-			ft_put_sprite(vars, vars->hero1, y, x - 1);
-			ft_printf("You won ! total moves : %d.\n", vars->moves);
+			ft_put_sprite(vars, vars->hero, y, x - 1);
+			ft_printf("\nYou won ! total moves : %d.\n", vars->moves);
 			ft_close_and_free(vars);
 		}
 	}
@@ -120,8 +121,8 @@ void	ft_move_right(t_vars *vars)
 			vars->map_vars.map[y][x] = '0';
 			vars->moves++;
 			ft_put_sprite(vars, vars->floor, y, x);
-			ft_put_sprite(vars, vars->hero1, y, x + 1);
-			ft_printf("You won ! total moves : %d.\n", vars->moves);
+			ft_put_sprite(vars, vars->hero, y, x + 1);
+			ft_printf("\nYou won ! total moves : %d.\n", vars->moves);
 			ft_close_and_free(vars);
 		}
 	}

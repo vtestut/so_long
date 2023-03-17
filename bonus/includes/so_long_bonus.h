@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 13:12:47 by vtestut           #+#    #+#             */
-/*   Updated: 2023/03/16 15:53:40 by vtestut          ###   ########.fr       */
+/*   Updated: 2023/03/17 14:41:59 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 /*******************	INCLUDES		**************************************/
 
 # include "../minilibx-linux/mlx.h"
 # include "../libft/includes/libft.h"
 # include <stdbool.h>
-# include <unistd.h>
+# include <unistd.h> // usleep
 
 /*******************	DEFINES			**************************************/
 
@@ -79,9 +79,11 @@ typedef struct s_vars {
 }				t_vars;
 
 /*******************	SO_LONG.C		**************************************/
-void	ft_set_sprites(t_vars *vars);
-void	ft_init_vars(t_vars *vars);
 int		main(int ac, char **av);
+void	ft_init_vars(t_vars *vars);
+void	ft_init_vars_aux(t_vars *vars);
+void	ft_set_sprites(t_vars *vars);
+void	ft_xpm_protection(t_vars *vars);
 
 /*******************	PARSING.C		**************************************/
 bool	ft_check_param(int ac, char **av, t_vars *vars);

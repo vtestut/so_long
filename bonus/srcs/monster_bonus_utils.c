@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   monster_utils.c                                    :+:      :+:    :+:   */
+/*   monster_bonus_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 03:35:11 by vtestut           #+#    #+#             */
-/*   Updated: 2023/03/09 03:36:31 by vtestut          ###   ########.fr       */
+/*   Updated: 2023/03/17 14:37:58 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/so_long.h"
+#include "../includes/so_long_bonus.h"
 
 int	ft_bug_idle(t_vars *vars, int x, int y)
 {

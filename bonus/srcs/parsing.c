@@ -6,11 +6,11 @@
 /*   By: vtestut <vtestut@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 14:24:32 by vtestut           #+#    #+#             */
-/*   Updated: 2023/03/16 16:44:28 by vtestut          ###   ########.fr       */
+/*   Updated: 2023/03/17 14:38:39 by vtestut          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/so_long.h"
+#include "../includes/so_long_bonus.h"
 
 bool	ft_check_param(int ac, char **av, t_vars *vars)
 {
